@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Banking APP by Guesmia
+
+This project is bootstacked by Next.js 15.03, PostgreSQL, Prisma, and Docker.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisties
+
+-   Node.js: Version 20.0 or higher
+-   Docker: Required only if PostgreSQL is not installed locally
+
+### Development
+
+1. Set environment variables
+
+    Refer to `.env.example` for the required environment variables and create a `.env` file with the necessary configurations.
+
+2. Setup DB configuration
+
+    Use the following commands to set up the PostgreSQL database:
+
+    ```bash
+    docker-compose up -d
+    npx prisma generate
+    npx prisma migrate dev
+    ```
+
+3. Start the application locally:
+
+    ```bash
+    npm run dev
+    ```
+
+### Testing
+
+Automated testing is handled via GitHub workflows, ensuring continuous integration and quality checks.
+To run tests locally, use:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Hosting
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is continuously deployed to **Vercel**, utilizing Vercel’s seamless GitHub integration. Every push to the repository triggers an automatic deployment.

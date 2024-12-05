@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { NavLinks } from "@/app/ui/nav-links";
-import { SidebarNav } from "@/components/sidebar/page";
+
+import { Sidebar } from "@/components/sidebar";
 import { navLinks } from "@/config/links";
-import { Header } from "./ui/header";
+import { Header } from "@/views/header";
+import { NavLinks } from "@/views/nav-links";
+
 import { ContextProvider } from "./provider";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Banking App",
@@ -23,7 +26,7 @@ export default function RootLayout({
                     <div className="container mx-auto relative">
                         <Header />
                         <main className="min-h-[calc(100vh_-160px)] container mx-auto flex gap-10 md:pt-10 px-2 ">
-                            <SidebarNav items={navLinks} />
+                            <Sidebar items={navLinks} />
                             <div className=" relative w-full h-full">
                                 {children}
                             </div>

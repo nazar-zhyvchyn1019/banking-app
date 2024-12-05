@@ -1,6 +1,6 @@
 "use client";
 
-import { useUserContext } from "@/state/User";
+import { useUserContext } from "@/contexts/user";
 import { useCallback, useState } from "react";
 
 export default function WithdrawAndDeposit({

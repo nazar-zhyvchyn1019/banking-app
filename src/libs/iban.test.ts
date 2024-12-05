@@ -1,4 +1,4 @@
-import { generateIbanAddress, isValidIBANNumber } from "../src/lib/utils";
+import { generateIbanAddress, isValidIBANNumber } from "./iban";
 
 describe("IBAN Generator and Validator", () => {
     // Test the generateIbanAddress function

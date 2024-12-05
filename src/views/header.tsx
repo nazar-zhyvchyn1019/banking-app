@@ -2,7 +2,7 @@
 
 import { Fragment } from "react";
 import Image from "next/image";
-import { useUserContext } from "@/state/User";
+import { useUserContext } from "@/contexts/user";
 
 export function Header() {
     const { address } = useUserContext();

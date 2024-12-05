@@ -1,7 +1,8 @@
 "use client";
 
-import { useUserContext } from "@/state/User";
 import { useState, useEffect } from "react";
+
+import { useUserContext } from "@/contexts/user";
 
 interface Transaction {
     id: string;

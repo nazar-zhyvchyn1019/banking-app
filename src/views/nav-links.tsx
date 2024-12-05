@@ -2,10 +2,10 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import HomeIcon from "@/components/imgs/home_icon";
-import WalletIcon from "@/components/imgs/wallet_icon";
-import TransactionIcon from "@/components/imgs/transaction_icon";
-import ProfileIcon from "@/components/imgs/profile_icon";
+import HomeIcon from "@/components/icons/home-icon";
+import WalletIcon from "@/components/icons/wallet-icon";
+import TransactionIcon from "@/components/icons/transaction-icon";
+import ProfileIcon from "@/components/icons/profile-icon";
 import { NavItem } from "@/types/nav";
 
 export function NavLinks({

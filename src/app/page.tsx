@@ -1,13 +1,13 @@
 "use client";
-// import Image from "next/image";
+
 import { useCallback, useEffect, useState } from "react";
 
-import DepositIcon from "@/components/imgs/deposit_icon";
-import TransferIcon from "@/components/imgs/transfer_icon";
-import WithdrawIcon from "@/components/imgs/withdraw_icon";
-import WithdrawAndDeposit from "./components/withdraw-and-deposit";
-import Transfer from "./components/transfer";
-import { useUserContext } from "@/state/User";
+import DepositIcon from "@/components/icons/deposit-icon";
+import TransferIcon from "@/components/icons/transfer-icon";
+import WithdrawIcon from "@/components/icons/withdraw-icon";
+import WithdrawAndDeposit from "@/views/withdraw-and-deposit";
+import Transfer from "@/views/transfer";
+import { useUserContext } from "@/contexts/user";
 
 export default function Home() {
     const [tab, setTab] = useState<"withdraw" | "deposit" | "transfer">(

@@ -1,5 +1,8 @@
+/**
+ * Generates random IBAN address
+ * @returns generated IBAN address
+ */
 export function generateIbanAddress() {
-    console.log("generate number");
     const countryCode = "GB";
     let checkDigits = "99"; // Random two digits
     const bankCode = "WEST"; // Bank Identifier
@@ -17,6 +20,13 @@ export function generateIbanAddress() {
     return `${countryCode}${checkDigits}${bankCode}${sortCode}${accountNumber}`;
 }
 
+/**
+ * Replaces letters with digits from string
+ *
+ * @param input
+ * @returns string
+ */
+
 function replaceLettersWithDigits(input: string): string {
     return input
         .toUpperCase()
@@ -30,6 +40,13 @@ function replaceLettersWithDigits(input: string): string {
         })
         .join("");
 }
+
+/**
+ * Checks IBAN number if it is valid
+ *
+ * @param {string} input  iban number
+ * @returns true if input is valid, false otherwise
+ */
 
 export function isValidIBANNumber(input: string) {
     const CODE_LENGTHS = {

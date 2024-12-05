@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { UserContextProvider } from "@/state/User";
+import { UserContextProvider } from "@/contexts/user";
 
 export function ContextProvider({ children, ...props }) {
     return (

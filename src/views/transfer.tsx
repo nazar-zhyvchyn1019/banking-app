@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 
-import { useUserContext } from "@/state/User";
-import { isValidIBANNumber } from "@/lib/utils";
+import { useUserContext } from "@/contexts/user";
+import { isValidIBANNumber } from "@/libs/iban";
 
 export default function Transfer() {
     const { address, setBalance } = useUserContext();

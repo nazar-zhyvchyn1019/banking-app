@@ -1,5 +1,5 @@
-import prisma from "@/lib/prisma";
-import { generateIbanAddress } from "@/lib/utils";
+import prisma from "@/libs/prisma";
+import { generateIbanAddress } from "@/libs/iban";
 import { NextResponse } from "next/server";
 
 export async function GET() {

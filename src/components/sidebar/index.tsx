@@ -1,18 +1,19 @@
 "use client";
 
-import { NavItem } from "@/types/nav";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import HomeIcon from "@/components/imgs/home_icon";
-import WalletIcon from "@/components/imgs/wallet_icon";
-import TransactionIcon from "@/components/imgs/transaction_icon";
-import ProfileIcon from "@/components/imgs/profile_icon";
+
+import { NavItem } from "@/types/nav";
+import HomeIcon from "@/components/icons/home-icon";
+import WalletIcon from "@/components/icons/wallet-icon";
+import TransactionIcon from "@/components/icons/transaction-icon";
+import ProfileIcon from "@/components/icons/profile-icon";
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
     items: NavItem[];
 }
 
-export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
+export function Sidebar({ className, items, ...props }: SidebarNavProps) {
     const pathname = usePathname();
 
     return (
