@@ -1,4 +1,4 @@
-# Banking APP by Guesmia
+# Banking APP
 
 This project is bootstacked by Next.js 15.03, PostgreSQL, Prisma, and Docker.
 
