@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 
 import prisma from "@/libs/prisma";
 
+import { transferFund } from "./transfer";
+
 // transfter function
 export async function POST(req: Request) {
     const { senderAddress, recipient, amount } = await req.json();
@@ -66,38 +68,7 @@ export async function POST(req: Request) {
             );
         }
 
-        await prisma.$transaction([
-            // Deduct from sender
-            prisma.account.update({
-                where: { address: senderAddress },
-                data: {
-                    balance: { decrement: amount },
-                    transactions: {
-                        create: {
-                            type: "TRANSFER",
-                            amount: -amount,
-                            balance: sender.balance - amount,
-                            description: `Transfer to ${recipient}`,
-                        },
-                    },
-                },
-            }),
-            // Add to recipient
-            prisma.account.update({
-                where: { address: recipient },
-                data: {
-                    balance: { increment: amount },
-                    transactions: {
-                        create: {
-                            type: "TRANSFER",
-                            amount: amount,
-                            balance: receiver.balance + amount,
-                            description: `Transfer from ${senderAddress}`,
-                        },
-                    },
-                },
-            }),
-        ]);
+        transferFund(senderAddress, recipient, amount);
 
         return NextResponse.json({ balance: sender.balance - amount });
     } catch (error) {

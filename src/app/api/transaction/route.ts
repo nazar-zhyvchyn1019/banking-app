@@ -6,7 +6,6 @@ const prisma = new PrismaClient();
 
 export async function GET(req: NextRequest) {
     const address = req.nextUrl.searchParams.get("address");
-    console.log("first", address);
 
     if (!address) {
         return new NextResponse(

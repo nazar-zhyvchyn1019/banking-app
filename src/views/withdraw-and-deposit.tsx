@@ -15,7 +15,6 @@ export default function WithdrawAndDeposit({
     const [error, setError] = useState<string | null>(null);
 
     const handleTransaction = useCallback(async () => {
-        console.log("first", address, amount);
         if (!address || amount <= 0) {
             setError("Invalid IBAN or amount.");
             return;
