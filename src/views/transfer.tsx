@@ -31,7 +31,7 @@ export default function Transfer() {
         }
 
         try {
-            const response = await fetch("/api/balance", {
+            const response = await fetch("/api/transfer", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

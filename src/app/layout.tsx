@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Sidebar } from "@/components/sidebar";
 import { navLinks } from "@/config/links";
 import { Header } from "@/views/header";
-import { NavLinks } from "@/views/nav-links";
+import { Footer } from "@/views/footer";
 
 import { ContextProvider } from "./provider";
 
@@ -32,12 +32,7 @@ export default function RootLayout({
                             </div>
                         </main>
                         <div className="md:hidden block h-[70px]"></div>
-                        <footer className="md:hidden fixed left-0 right-0 bottom-0  bg-white border-t border-t-[#222]  text-white font-bold  flex items-center justify-between px-10 py-3">
-                            <NavLinks
-                                items={navLinks}
-                                className="w-full justify-between"
-                            />
-                        </footer>
+                        <Footer />
                     </div>
                 </body>
             </ContextProvider>
