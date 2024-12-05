@@ -5,8 +5,8 @@ import { useCallback, useEffect, useState } from "react";
 import DepositIcon from "@/components/icons/deposit-icon";
 import TransferIcon from "@/components/icons/transfer-icon";
 import WithdrawIcon from "@/components/icons/withdraw-icon";
-import WithdrawAndDeposit from "@/views/withdraw-and-deposit";
-import Transfer from "@/views/transfer";
+import WithdrawAndDeposit from "@/app/ui/withdraw-and-deposit";
+import Transfer from "@/app/ui/transfer";
 import { useUserContext } from "@/contexts/user";
 
 export default function Home() {

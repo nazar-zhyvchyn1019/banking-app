@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 import { Sidebar } from "@/components/sidebar";
+import { Header } from "@/app/ui/header";
+import { Footer } from "@/app/ui/footer";
 import { navLinks } from "@/config/links";
-import { Header } from "@/views/header";
-import { Footer } from "@/views/footer";
 
 import { ContextProvider } from "./provider";
 
