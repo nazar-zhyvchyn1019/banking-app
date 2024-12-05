@@ -112,19 +112,21 @@ export function isValidIBANNumber(input: string) {
         VG: 24,
         XK: 20,
     };
-    let iban = String(input)
-            .toUpperCase()
-            .replace(/[^A-Z0-9]/g, ""), // keep only alphanumeric characters
-        code = iban.match(/^([A-Z]{2})(\d{2})([A-Z\d]+)$/), // match and capture (1) the country code, (2) the check digits, and (3) the rest
-        digits;
+    const iban = String(input)
+        .toUpperCase()
+        .replace(/[^A-Z0-9]/g, ""); // keep only alphanumeric characters
+    const code = iban.match(/^([A-Z]{2})(\d{2})([A-Z\d]+)$/); // match and capture (1) the country code, (2) the check digits, and (3) the rest
     // check syntax and length
     if (!code || iban.length !== CODE_LENGTHS[code[1]]) {
         return false;
     }
     // rearrange country code and check digits, and convert chars to ints
-    digits = (code[3] + code[1] + code[2]).replace(/[A-Z]/g, function (letter) {
-        return (letter.charCodeAt(0) - 55).toString();
-    });
+    const digits = (code[3] + code[1] + code[2]).replace(
+        /[A-Z]/g,
+        function (letter) {
+            return (letter.charCodeAt(0) - 55).toString();
+        }
+    );
     // final check
     return mod97(digits) === 1;
 }

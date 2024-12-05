@@ -47,7 +47,7 @@ export default function WithdrawAndDeposit({
         } finally {
             setLoading(false);
         }
-    }, [address, amount]);
+    }, [address, amount, setBalance, type]);
     return (
         <div className="flex flex-col  items-center gap-5 border border-solid border-[#B1B1B1] p-3 rounded-lg">
             <h1 className="uppercase">{type}</h1>

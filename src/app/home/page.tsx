@@ -42,7 +42,7 @@ export default function Home() {
         };
 
         fetchBalance();
-    }, [address]);
+    }, [address, setBalance]);
 
     return (
         <div className="flex flex-col w-full relative gap-10 text-[#000E24]">
