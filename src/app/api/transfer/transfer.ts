@@ -65,7 +65,7 @@ export const transferFund = async (
             }),
         ]);
     } catch (error) {
-        console.error("Transaction failed:", error);
+        console.log("Transaction failed:", error);
         throw new Error("Failed to process the transaction.");
     }
 };

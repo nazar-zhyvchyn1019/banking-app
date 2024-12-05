@@ -31,13 +31,13 @@ export default function Home() {
                 const response = await fetch(`/api/balance?address=${address}`);
                 if (!response.ok) {
                     const data = await response.json();
-                    console.error("Error fetching balance:", data.message);
+                    console.log("Error fetching balance:", data.message);
                     return;
                 }
                 const data = await response.json();
                 setBalance(data.balance); // Update state with the fetched balance
             } catch (error) {
-                console.error("Error fetching balance:", error);
+                console.log("Error fetching balance:", error);
             }
         };
 

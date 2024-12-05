@@ -52,7 +52,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json({ balance: updatedAccount.balance });
     } catch (error) {
-        console.error("Deposit error", error);
+        console.log("Deposit error", error);
         return new NextResponse("Internal error", { status: 500 });
     }
 }

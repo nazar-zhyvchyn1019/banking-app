@@ -72,7 +72,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json({ balance: sender.balance - amount });
     } catch (error) {
-        console.error("Transfer error", error);
+        console.log("Transfer error", error);
         return new NextResponse("Internal error", { status: 500 });
     }
 }

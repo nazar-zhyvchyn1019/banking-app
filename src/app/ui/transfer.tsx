@@ -53,7 +53,7 @@ export default function Transfer() {
                 setSuccess("Transfer successful!");
             }
         } catch (err) {
-            console.error("Transfer error:", err);
+            console.log("Transfer error:", err);
             setError("An error occurred while processing the transfer.");
         } finally {
             setLoading(false);

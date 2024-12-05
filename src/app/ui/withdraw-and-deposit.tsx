@@ -41,7 +41,7 @@ export default function WithdrawAndDeposit({
                 setAmount(0);
             }
         } catch (err) {
-            console.error("Error during transaction:", err);
+            console.log("Error during transaction:", err);
             setError("An error occurred while processing your request.");
         } finally {
             setLoading(false);

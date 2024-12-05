@@ -46,7 +46,7 @@ export async function GET(req: NextRequest) {
         });
         return NextResponse.json({ transactions });
     } catch (error) {
-        console.error("Error fetching transaction history:", error);
+        console.log("Error fetching transaction history:", error);
         return new NextResponse("Internal error", { status: 500 });
     }
 }

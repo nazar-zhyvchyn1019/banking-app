@@ -66,7 +66,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json({ balance: updatedAccount.balance });
     } catch (error) {
-        console.error("withdraw error", error);
+        console.log("withdraw error", error);
         return new NextResponse("Internal error", { status: 500 });
     }
 }

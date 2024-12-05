@@ -39,7 +39,7 @@ export default function TransactionHistory() {
                     setError(null);
                 }
             } catch (err) {
-                console.error("Error fetching transactions:", err);
+                console.log("Error fetching transactions:", err);
                 setError(
                     "An error occurred while fetching transaction history."
                 );

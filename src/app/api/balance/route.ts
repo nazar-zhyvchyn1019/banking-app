@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
             }
         );
     } catch (error) {
-        console.error("Error fetching balance:", error);
+        console.log("Error fetching balance:", error);
         return new NextResponse(
             JSON.stringify({
                 status: "error",
