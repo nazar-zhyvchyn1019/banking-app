@@ -8,7 +8,7 @@ export default function WithdrawAndDeposit({
 }: {
     type?: "withdraw" | "deposit";
 }) {
-    const { address, balance, setBalance } = useUserContext();
+    const { address, setBalance } = useUserContext();
 
     const [amount, setAmount] = useState(0);
     const [loading, setLoading] = useState(false);

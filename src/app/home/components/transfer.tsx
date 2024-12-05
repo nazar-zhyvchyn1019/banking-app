@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useUserContext } from "@/state/User";
 import { isValidIBANNumber } from "@/lib/utils";

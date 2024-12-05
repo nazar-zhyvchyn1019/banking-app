@@ -32,7 +32,7 @@ function replaceLettersWithDigits(input: string): string {
 }
 
 export function isValidIBANNumber(input: string) {
-    var CODE_LENGTHS = {
+    const CODE_LENGTHS = {
         AD: 24,
         AE: 23,
         AT: 20,
@@ -112,7 +112,7 @@ export function isValidIBANNumber(input: string) {
         VG: 24,
         XK: 20,
     };
-    var iban = String(input)
+    let iban = String(input)
             .toUpperCase()
             .replace(/[^A-Z0-9]/g, ""), // keep only alphanumeric characters
         code = iban.match(/^([A-Z]{2})(\d{2})([A-Z\d]+)$/), // match and capture (1) the country code, (2) the check digits, and (3) the rest
@@ -130,9 +130,9 @@ export function isValidIBANNumber(input: string) {
 }
 
 function mod97(string) {
-    var checksum = string.slice(0, 2),
-        fragment;
-    for (var offset = 2; offset < string.length; offset += 7) {
+    let checksum = string.slice(0, 2);
+    let fragment: string;
+    for (let offset = 2; offset < string.length; offset += 7) {
         fragment = String(checksum) + string.substring(offset, offset + 7);
         checksum = parseInt(fragment, 10) % 97;
     }
